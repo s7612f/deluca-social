@@ -1,1 +1,10 @@
-deploy.sh
+# Media — too large for git
+Videos/
+Photos/
+Adobe Express Exports/
+Archive/
+
+# Mac
+.DS_Store
+*.zip
+._*
