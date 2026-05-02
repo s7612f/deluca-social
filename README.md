@@ -2,6 +2,18 @@
 
 **Content hub:** https://s7612f.github.io/deluca-social/
 
+## Client Direction
+
+**Paul's brief:**
+- Maintain an authentic Italian feel across all Reels and Stories — the tone, language, and visuals should feel genuinely Italian, not generic "restaurant content"
+- Italian phrases and references (e.g. *bellissimo*, *al fresco*, *handmade*) are encouraged and on-brand
+- Stories and Shorts should feel warm, personal, and rooted in Italian dining culture
+
+**20 Years Campaign:**
+De Luca has been open for 20 years. Paul wants a campaign to mark this milestone — content should celebrate the restaurant's heritage and longevity in Cambridge. Themes: tradition, craft, loyalty, community. This is a milestone campaign, not just a single post.
+
+---
+
 ## Folder structure
 | Folder | Contents |
 |---|---|
