@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="720" height="200" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="200" fill="#F4EDE3"/>
+  <rect x="31" y="34" width="96" height="110" fill="#C4622D" rx="3"/>
+  <text x="79" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">PRIMARY</text>
+  <text x="79" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">TERRACOTTA</text>
+  <text x="79" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#C4622D</text>
+  <rect x="141" y="34" width="96" height="110" fill="#A04E1F" rx="3"/>
+  <text x="189" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">ACCENT</text>
+  <text x="189" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">TERRA SCURO</text>
+  <text x="189" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#A04E1F</text>
+  <rect x="251" y="34" width="96" height="110" fill="#E08A50" rx="3"/>
+  <text x="299" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">HIGHLIGHT</text>
+  <text x="299" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">TERRA CHIARO</text>
+  <text x="299" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#E08A50</text>
+  <rect x="361" y="34" width="96" height="110" fill="#18170F" rx="3"/>
+  <text x="409" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">BASE</text>
+  <text x="409" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">NERO</text>
+  <text x="409" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#18170F</text>
+  <rect x="471" y="34" width="96" height="110" fill="#F4EDE3" rx="3" stroke="#6B5F55" stroke-width="0.6"/>
+  <text x="519" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">GROUND</text>
+  <text x="519" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">AVORIO</text>
+  <text x="519" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#F4EDE3</text>
+  <rect x="581" y="34" width="96" height="110" fill="#C9A96E" rx="3"/>
+  <text x="629" y="22" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="7" fill="#6B5F55" letter-spacing="2">DETAIL</text>
+  <text x="629" y="164" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9.5" fill="#18170F" font-weight="600" letter-spacing="1">ORO</text>
+  <text x="629" y="177" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" fill="#6B5F55">#C9A96E</text>
+</svg>

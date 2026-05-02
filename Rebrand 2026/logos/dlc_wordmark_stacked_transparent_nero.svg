@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  
+  <text x="540" y="460" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="170" fill="#18170F" font-weight="600" letter-spacing="6">DE</text>
+  <text x="540" y="640" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="170" fill="#18170F" font-weight="600" letter-spacing="6">LUCA</text>
+  <line x1="430" y1="700" x2="650" y2="700" stroke="#18170F" stroke-width="0.7"/>
+  <text x="540" y="745" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="20" fill="#18170F" letter-spacing="10">ITALIAN RESTAURANT</text>
+</svg>
