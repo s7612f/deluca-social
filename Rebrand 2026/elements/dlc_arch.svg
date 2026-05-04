@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="200" height="280" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 280 L20 120 Q20 20 100 20 Q180 20 180 120 L180 280" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/>
-  <!-- inner arch offset -->
-  <path d="M32 280 L32 122 Q32 34 100 34 Q168 34 168 122 L168 280" fill="none" stroke="currentColor" stroke-width="0.4"/>
-</svg>

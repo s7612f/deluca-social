@@ -3,972 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>De Luca - Social Media 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<template id="__bundler_thumbnail">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56">
-  <rect width="80" height="56" fill="#6E0B1C"/>
-  <text x="40" y="26" text-anchor="middle" font-family="serif" font-size="11" fill="white" font-style="italic">De Luca</text>
-  <text x="40" y="40" text-anchor="middle" font-family="sans-serif" font-size="5" fill="rgba(255,255,255,0.6)" letter-spacing="1">2026</text>
-</svg>
-</template>
+<title>De Luca</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --cr:#6E0B1C; --si:#C0C0C0;
-  --wh:#fff; --ow:#FAF9F7; --iv:#F4EDE3;
-  --tx:#1A1A1A; --mu:#777; --bo:#E8E4DF; --su:#F5F3EF;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #080808;
+  min-height: 100vh;
 }
-body{font-family:'DM Sans',sans-serif;background:var(--ow);color:var(--tx);min-height:100vh}
 
-/* NAV */
-nav{background:var(--cr);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(110,11,28,.35)}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-style:italic;letter-spacing:.02em}
-.nav-links{display:flex;gap:4px}
-.nav-tab{color:rgba(255,255,255,.65);font-size:11px;font-weight:500;padding:7px 16px;cursor:pointer;border:none;background:transparent;font-family:'DM Sans',sans-serif;transition:all .15s;letter-spacing:.04em;text-transform:uppercase}
-.nav-tab:hover,.nav-tab.active{background:rgba(255,255,255,.15);color:#fff}
+.grid {
+  columns: 300px;
+  column-gap: 3px;
+  padding: 3px;
+}
 
-/* HERO */
-.hero{background:var(--cr);padding:5rem 2.5rem 4rem;text-align:center;color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.2' fill='white' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none}
-.hero-eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;opacity:.6;margin-bottom:1rem;font-weight:300}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,80px);font-style:italic;font-weight:700;line-height:.95;letter-spacing:-1px;margin-bottom:1.2rem}
-.hero p{font-size:15px;opacity:.75;max-width:520px;margin:0 auto;line-height:1.7;font-weight:300}
-.hero-badges{display:flex;gap:10px;justify-content:center;margin-top:2rem;flex-wrap:wrap}
-.hb{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.item {
+  break-inside: avoid;
+  margin-bottom: 3px;
+  overflow: hidden;
+  display: block;
+  background: #111;
+  line-height: 0;
+}
 
-/* SECTIONS */
-main{max-width:1100px;margin:0 auto;padding:0 2rem 6rem}
-.section{padding-top:4rem}
-.section-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cr);font-weight:500;margin-bottom:.5rem}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-style:italic;font-weight:700;line-height:1;letter-spacing:-.5px;margin-bottom:.75rem}
-.section-sub{font-size:13px;color:var(--mu);line-height:1.7;max-width:560px;margin-bottom:2.5rem}
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-/* TEMPLATE GRID */
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.tcard{background:var(--wh);border:1px solid var(--bo);overflow:hidden;transition:all .2s;cursor:pointer}
-.tcard:hover{border-color:var(--cr);transform:translateY(-3px);box-shadow:0 8px 30px rgba(110,11,28,.12)}
-.tcard svg{width:100%;height:auto;display:block}
-.tcard-body{padding:12px 14px;border-top:1px solid var(--bo)}
-.tcard-name{font-size:13px;font-weight:500;margin-bottom:3px}
-.tcard-meta{font-size:10px;color:var(--mu);letter-spacing:.03em}
-.dl-row{display:flex;gap:6px;margin-top:10px}
-.dl-btn{flex:1;background:var(--cr);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:1.5px;padding:8px;cursor:pointer;text-transform:uppercase;transition:opacity .15s}
-.dl-btn:hover{opacity:.85}
-.prev-btn{background:none;border:1px solid var(--bo);color:var(--mu);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:1px;padding:8px 12px;cursor:pointer;text-transform:uppercase;transition:all .15s}
-.prev-btn:hover{border-color:var(--cr);color:var(--cr)}
+.item video {
+  width: 100%;
+  display: block;
+}
 
-/* CAPTION SHOWCASE */
-.cap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.cap-card{background:var(--wh);border:1px solid var(--bo);padding:1.25rem 1.5rem;position:relative}
-.cap-type{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cr);margin-bottom:8px;font-weight:500}
-.cap-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--tx);line-height:1.4;margin-bottom:8px}
-.cap-hash{font-size:11px;color:var(--mu);line-height:1.8}
-.copy-btn{position:absolute;top:12px;right:12px;background:none;border:1px solid var(--bo);padding:4px 10px;font-size:9px;letter-spacing:1px;cursor:pointer;color:var(--mu);font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s}
-.copy-btn:hover{background:var(--cr);color:#fff;border-color:var(--cr)}
+.item video.portrait {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
 
-/* BRAND BOARD */
-.brand-board{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-@media(max-width:680px){.brand-board{grid-template-columns:1fr}}
-.brand-card{background:var(--wh);border:1px solid var(--bo);padding:1.5rem}
-.brand-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--cr);margin-bottom:1rem}
-.swatch-row{display:flex;gap:10px;flex-wrap:wrap}
-.swatch{width:50px;height:50px;border:1px solid var(--bo);margin-bottom:4px}
-.sw-label{font-size:9px;color:var(--mu);letter-spacing:.5px}
-.sw-hex{font-size:10px;font-family:monospace;color:var(--tx)}
-.font-demo{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:var(--cr);margin-bottom:6px;line-height:1.1}
-.font-meta{font-size:11px;color:var(--mu);line-height:1.6}
-.do-list{list-style:none;padding:0}
-.do-list li{font-size:12px;color:var(--mu);padding:5px 0;border-bottom:1px solid var(--bo);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
-.do-list li:last-child{border:none}
-.do-list li::before{content:'✓';color:#1A6B3A;font-weight:600;flex-shrink:0}
-.dont-list li::before{content:'✗';color:var(--cr)}
+.item video.square {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
 
-/* SCHEDULE VISUAL */
-.sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.5rem}
-@media(max-width:600px){.sched-grid{grid-template-columns:1fr}}
-.sched-card{background:var(--wh);border:1px solid var(--bo);padding:1.25rem 1.5rem;border-top:3px solid var(--cr)}
-.sched-day{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cr);margin-bottom:6px;font-weight:500}
-.sched-time{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--tx);margin-bottom:4px}
-.sched-desc{font-size:12px;color:var(--mu);line-height:1.5}
-
-/* THEME ROTATION */
-.theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(max-width:600px){.theme-grid{grid-template-columns:1fr}}
-.theme-card{background:var(--wh);border:1px solid var(--bo);padding:1.25rem 1.5rem}
-.theme-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-style:italic;color:var(--cr);opacity:.3;float:right;line-height:1;margin-top:-4px}
-.theme-card h4{font-size:14px;font-weight:500;margin-bottom:6px}
-.theme-card p{font-size:12px;color:var(--mu);line-height:1.6;clear:both}
-
-/* HASHTAGS */
-.hash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(max-width:600px){.hash-grid{grid-template-columns:1fr}}
-.hash-card{background:var(--wh);border:1px solid var(--bo);padding:1.25rem}
-.hash-card h4{font-size:12px;font-weight:500;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.hash-tags{font-family:monospace;font-size:12px;color:var(--cr);line-height:2.2}
-
-/* OVERVIEW STATS */
-.stats-strip{display:flex;gap:0;border:1px solid var(--bo);margin-bottom:3rem;background:var(--wh)}
-.stat-item{flex:1;padding:1.5rem;text-align:center;border-right:1px solid var(--bo)}
-.stat-item:last-child{border-right:none}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--cr)}
-.stat-l{font-size:11px;color:var(--mu);letter-spacing:1px;margin-top:3px}
-
-/* OVERLAY */
-.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:12px}
-.ov.open{display:flex}
-.ov svg{width:auto;height:86vh;max-width:90vw;display:block}
-.ov-x{position:absolute;top:18px;right:24px;background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;padding:7px 14px;cursor:pointer;text-transform:uppercase}
-.ov-x:hover{color:#fff}
-.ov-lbl{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase}
-
-/* FOOTER */
-footer{background:var(--cr);color:rgba(255,255,255,.7);text-align:center;padding:2rem;font-size:12px;letter-spacing:1px}
-footer strong{color:#fff;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;display:block;margin-bottom:6px}
+.item iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+  display: block;
+}
 </style>
 </head>
 <body>
+<div class="grid">
 
-<nav>
-  <div class="nav-brand">De Luca</div>
-  <div class="nav-links">
-    <button class="nav-tab active" onclick="goTo('overview')">Overview</button>
-    <button class="nav-tab" onclick="goTo('templates')">Templates</button>
-    <button class="nav-tab" onclick="goTo('captions')">Captions</button>
-    <button class="nav-tab" onclick="goTo('brand')">Brand</button>
-    <button class="nav-tab" onclick="goTo('strategy')">Strategy</button>
+  <div class="item">
+    <img src="media/stories/dlc_20years_anniversary_story_r1.png" loading="lazy">
   </div>
-</nav>
 
-<div class="hero">
-  <div class="hero-eyebrow">De Luca Cucina &amp; Bar · Cambridge</div>
-  <h1>Social Media<br>2026</h1>
-  <p>Everything you need to run De Luca's Instagram - templates, captions, brand guidelines, and a weekly content strategy.</p>
-  <div class="hero-badges">
-    <span class="hb">20 templates</span>
-    <span class="hb">Feed + Stories</span>
-    <span class="hb">Caption bank</span>
-    <span class="hb">20 Years campaign</span>
-    <span class="hb">New Menu launch</span>
+  <div class="item">
+    <img src="media/feed_posts/bold_new_menu.png" loading="lazy">
   </div>
+
+  <div class="item">
+    <video class="portrait" autoplay muted loop playsinline>
+      <source src="media/stories/dlc_cta_generic_2_r1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <img src="media/feed_posts/dlc_20years_anniversary_r1.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <img src="media/stories/dlc_20years_anniversary_story_r2.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <video class="square" autoplay muted loop playsinline>
+      <source src="media/feed_posts/cta.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <img src="media/stories/dlc_new_menu_blue_r1.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <img src="media/feed_posts/dlc_menu_blue_r1.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <video class="portrait" autoplay muted loop playsinline>
+      <source src="media/stories/cta.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <img src="media/feed_posts/menu_cta.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <img src="media/stories/generic story.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <video class="square" autoplay muted loop playsinline>
+      <source src="media/feed_posts/dlc_cta_generic_2_r1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <img src="media/stories/New Menu.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <img src="media/stories/new menu no photos.png" loading="lazy">
+  </div>
+
+  <div class="item">
+    <video class="portrait" autoplay muted loop playsinline>
+      <source src="media/reels/cta .mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <video class="portrait" autoplay muted loop playsinline>
+      <source src="media/reels/dlc_cta_generic_2_r1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="item">
+    <iframe src="media/stories/dlc_dessert_menu_template_r1.pdf"></iframe>
+  </div>
+
+  <div class="item">
+    <iframe src="media/stories/Dessert Menu .pdf"></iframe>
+  </div>
+
 </div>
-
-<main>
-
-<!-- OVERVIEW -->
-<div id="overview" class="section">
-  <div class="stats-strip">
-    <div class="stat-item"><div class="stat-n">20</div><div class="stat-l">Ready templates</div></div>
-    <div class="stat-item"><div class="stat-n">2</div><div class="stat-l">Stories per week</div></div>
-    <div class="stat-item"><div class="stat-n">1</div><div class="stat-l">Feed post per week</div></div>
-    <div class="stat-item"><div class="stat-n">20</div><div class="stat-l">Years · 2006–2026</div></div>
-  </div>
-
-  <div class="section-eyebrow">What's ready</div>
-  <div class="section-title">Content for<br>every occasion.</div>
-  <div class="section-sub">All templates are downloadable as SVG files - open in Canva, add your photo on top, and post. Captions are written and ready to copy. No design experience needed.</div>
-
-  <div class="theme-grid">
-    <div class="theme-card"><div class="theme-num">01</div><h4>General brand</h4><p>Fatto a mano, al fresco, stasera - everyday brand content that builds atmosphere and desire without selling.</p></div>
-    <div class="theme-card"><div class="theme-num">02</div><h4>New summer menu</h4><p>Menu announcement, dish heroes, specials board, wine list, set menu - everything to launch the new season.</p></div>
-    <div class="theme-card"><div class="theme-num">03</div><h4>20 Years campaign</h4><p>Vent'anni. Grazie. Le stesse mani. A campaign celebrating De Luca's 20 years in Cambridge.</p></div>
-    <div class="theme-card"><div class="theme-num">04</div><h4>Piano Bar</h4><p>Friday and Saturday nights. Cocktails, requests, sing-alongs. Content for the most distinctive thing about De Luca.</p></div>
-  </div>
-</div>
-
-<!-- TEMPLATES -->
-<div id="templates" class="section">
-  <div class="section-eyebrow">Templates</div>
-  <div class="section-title">10 feed posts.<br>10 stories.</div>
-  <div class="section-sub">Click any template to preview at full size. Hit ↓ Download to save the SVG - then open in Canva and upload as a background layer.</div>
-
-  <div class="section-eyebrow" style="margin-bottom:.75rem">Feed Posts - 1080 × 1080</div>
-  <div class="tgrid" style="margin-bottom:2.5rem">
-
-    <!-- T1 -->
-    <div class="tcard">
-      <svg id="pt1" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="pt1d" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.2" fill="#F4EDE3" opacity="0.08"/></pattern></defs>
-        <rect width="1080" height="1080" fill="#6E0B1C"/>
-        <rect width="1080" height="1080" fill="url(#pt1d)"/>
-        <rect x="24" y="24" width="1032" height="1032" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.6"/>
-        <rect x="60" y="60" width="960" height="600" fill="rgba(0,0,0,0.25)"/>
-        <text x="540" y="380" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="rgba(255,255,255,0.25)" letter-spacing="4">FOOD PHOTOGRAPH</text>
-        <text x="80" y="830" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-3">Fatto</text>
-        <text x="80" y="960" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-3">a mano.</text>
-        <rect x="0" y="1010" width="1080" height="70" fill="rgba(0,0,0,0.3)"/>
-        <text x="80" y="1053" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.85)" font-weight="500" letter-spacing="4">DE LUCA</text>
-        <text x="1000" y="1053" text-anchor="end" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" letter-spacing="2">CAMBRIDGE</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Fatto a Mano</div>
-        <div class="tcard-meta">Feed · Crimson · General brand</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt1','Fatto a Mano')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt1','dlc_feed_fatto_a_mano')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T2 -->
-    <div class="tcard">
-      <svg id="pt2" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#FAF9F7"/>
-        <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#6E0B1C" stroke-width="2"/>
-        <rect x="80" y="80" width="920" height="560" fill="#EDE8E2"/>
-        <text x="540" y="370" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#BBB" letter-spacing="4">TERRACE PHOTOGRAPH</text>
-        <text x="80" y="748" font-family="Cormorant Garamond,Georgia,serif" font-size="104" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-2">Al fresco.</text>
-        <line x1="80" y1="778" x2="500" y2="778" stroke="#6E0B1C" stroke-width="2.5"/>
-        <text x="80" y="838" font-family="DM Sans,sans-serif" font-size="15" fill="#888" letter-spacing="5">THE TERRACE IS OPEN</text>
-        <text x="80" y="980" font-family="Cormorant Garamond,Georgia,serif" font-size="22" fill="#6E0B1C" font-style="italic">De Luca · Cambridge</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Al Fresco</div>
-        <div class="tcard-meta">Feed · Ivory · Terrace</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt2','Al Fresco')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt2','dlc_feed_al_fresco')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T3 -->
-    <div class="tcard">
-      <svg id="pt3" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="5" fill="#6E0B1C"/>
-        <rect x="0" y="1075" width="1080" height="5" fill="#6E0B1C"/>
-        <rect x="80" y="80" width="920" height="580" fill="#111"/>
-        <text x="540" y="375" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#2A2A2A" letter-spacing="4">EVENING ATMOSPHERE</text>
-        <text x="80" y="790" font-family="Cormorant Garamond,Georgia,serif" font-size="110" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-2">Stasera.</text>
-        <line x1="80" y1="818" x2="440" y2="818" stroke="#6E0B1C" stroke-width="3"/>
-        <text x="80" y="872" font-family="DM Sans,sans-serif" font-size="14" fill="#555" letter-spacing="4">OPEN FROM 18:00</text>
-        <text x="80" y="938" font-family="DM Sans,sans-serif" font-size="12" fill="#6E0B1C" letter-spacing="2">BOOK YOUR TABLE ↗</text>
-        <text x="1000" y="1050" text-anchor="end" font-family="DM Sans,sans-serif" font-size="12" fill="#333" letter-spacing="3">DE LUCA</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Stasera</div>
-        <div class="tcard-meta">Feed · Dark · Booking prompt</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt3','Stasera')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt3','dlc_feed_stasera')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T4 -->
-    <div class="tcard">
-      <svg id="pt4" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="540" height="1080" fill="#6E0B1C"/>
-        <rect x="540" y="0" width="540" height="1080" fill="#D8D3CC"/>
-        <text x="540" y="540" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#AAA" letter-spacing="3">PHOTO</text>
-        <text x="60" y="418" font-family="Cormorant Garamond,Georgia,serif" font-size="96" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-2">The</text>
-        <text x="60" y="528" font-family="Cormorant Garamond,Georgia,serif" font-size="96" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-2">terrace</text>
-        <text x="60" y="638" font-family="Cormorant Garamond,Georgia,serif" font-size="96" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-2">awaits.</text>
-        <line x1="60" y1="678" x2="340" y2="678" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-        <text x="60" y="718" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" letter-spacing="3">DE LUCA · CAMBRIDGE</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Split - The Terrace</div>
-        <div class="tcard-meta">Feed · Crimson/ivory split</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt4','Split Terrace')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt4','dlc_feed_split_terrace')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T5 -->
-    <div class="tcard">
-      <svg id="pt5" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#6E0B1C"/>
-        <rect x="0" y="0" width="1080" height="700" fill="rgba(0,0,0,0.35)"/>
-        <text x="540" y="355" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="rgba(255,255,255,0.2)" letter-spacing="4">FOOD PHOTOGRAPH</text>
-        <rect x="0" y="700" width="1080" height="380" fill="#6E0B1C"/>
-        <text x="60" y="840" font-family="Cormorant Garamond,Georgia,serif" font-size="100" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-2">Il nuovo</text>
-        <text x="60" y="942" font-family="Cormorant Garamond,Georgia,serif" font-size="100" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-2">menù.</text>
-        <text x="60" y="998" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="4">THE SEASON CHANGED. SO DID WE.</text>
-        <text x="1020" y="1055" text-anchor="end" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" letter-spacing="2">DE LUCA</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Il Nuovo Menù</div>
-        <div class="tcard-meta">Feed · Crimson · Menu launch</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt5','Il Nuovo Menù')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt5','dlc_feed_nuovo_menu')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T6 -->
-    <div class="tcard">
-      <svg id="pt6" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#FAF9F7"/>
-        <rect x="0" y="0" width="1080" height="100" fill="#6E0B1C"/>
-        <text x="60" y="62" font-family="DM Sans,sans-serif" font-size="13" fill="#fff" font-weight="500" letter-spacing="4">DE LUCA</text>
-        <text x="1020" y="62" text-anchor="end" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" letter-spacing="3">QUESTA SETTIMANA</text>
-        <text x="60" y="266" font-family="Cormorant Garamond,Georgia,serif" font-size="76" fill="#1A1A1A" font-weight="700" font-style="italic">Ribollita.</text>
-        <text x="60" y="310" font-family="DM Sans,sans-serif" font-size="14" fill="#888" letter-spacing="1">Tuscan bread soup, kale, cannellini</text>
-        <line x1="60" y1="336" x2="1020" y2="336" stroke="#E5E2DD" stroke-width="1"/>
-        <text x="60" y="470" font-family="Cormorant Garamond,Georgia,serif" font-size="76" fill="#1A1A1A" font-weight="700" font-style="italic">Branzino.</text>
-        <text x="60" y="514" font-family="DM Sans,sans-serif" font-size="14" fill="#888" letter-spacing="1">Sea bass, salsa verde, grilled lemon</text>
-        <line x1="60" y1="540" x2="1020" y2="540" stroke="#E5E2DD" stroke-width="1"/>
-        <text x="60" y="674" font-family="Cormorant Garamond,Georgia,serif" font-size="76" fill="#1A1A1A" font-weight="700" font-style="italic">Tiramisù.</text>
-        <text x="60" y="718" font-family="DM Sans,sans-serif" font-size="14" fill="#888" letter-spacing="1">House made. No shortcuts.</text>
-        <rect x="0" y="900" width="1080" height="180" fill="#6E0B1C"/>
-        <text x="60" y="1002" font-family="Cormorant Garamond,Georgia,serif" font-size="52" fill="#fff" font-weight="700" font-style="italic">On the menu now.</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Specials Board</div>
-        <div class="tcard-meta">Feed · Ivory · Three dishes</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt6','Specials Board')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt6','dlc_feed_specials')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T7 -->
-    <div class="tcard">
-      <svg id="pt7" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="5" fill="#C9A96E"/>
-        <rect x="0" y="1075" width="1080" height="5" fill="#C9A96E"/>
-        <text x="-40" y="860" font-family="Cormorant Garamond,Georgia,serif" font-size="820" fill="#fff" font-weight="700" font-style="italic" opacity="0.03">20</text>
-        <text x="80" y="60" font-family="DM Sans,sans-serif" font-size="11" fill="#C9A96E" letter-spacing="6">CAMBRIDGE · 2006–2026</text>
-        <text x="80" y="450" font-family="Cormorant Garamond,Georgia,serif" font-size="230" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-8">Vent'</text>
-        <text x="80" y="668" font-family="Cormorant Garamond,Georgia,serif" font-size="230" fill="#C9A96E" font-weight="700" font-style="italic" letter-spacing="-8">anni.</text>
-        <line x1="80" y1="720" x2="580" y2="720" stroke="#C9A96E" stroke-width="1.5"/>
-        <text x="80" y="776" font-family="DM Sans,sans-serif" font-size="15" fill="#444" letter-spacing="5">TWENTY YEARS OF DE LUCA</text>
-        <text x="80" y="940" font-family="DM Sans,sans-serif" font-size="13" fill="#C9A96E" letter-spacing="4">DE LUCA</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Vent'anni - Hero</div>
-        <div class="tcard-meta">Feed · Dark gold · 20 years</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt7','Vent\'anni Hero')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt7','dlc_feed_20y_hero')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T8 -->
-    <div class="tcard">
-      <svg id="pt8" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#6E0B1C"/>
-        <text x="-40" y="860" font-family="Cormorant Garamond,Georgia,serif" font-size="820" fill="#000" font-weight="700" font-style="italic" opacity="0.06">20</text>
-        <text x="80" y="56" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" letter-spacing="5">CAMBRIDGE · 2006–2026</text>
-        <text x="80" y="430" font-family="Cormorant Garamond,Georgia,serif" font-size="250" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-8">Gra-</text>
-        <text x="80" y="678" font-family="Cormorant Garamond,Georgia,serif" font-size="250" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-8">zie.</text>
-        <line x1="80" y1="730" x2="460" y2="730" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-        <text x="80" y="790" font-family="DM Sans,sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" letter-spacing="5">TWENTY YEARS · DE LUCA</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Grazie - 20 Years</div>
-        <div class="tcard-meta">Feed · Crimson · Thank you</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt8','Grazie')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt8','dlc_feed_20y_grazie')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T9 -->
-    <div class="tcard">
-      <svg id="pt9" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="pt9d" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.2" fill="#6E0B1C" opacity="0.1"/></pattern></defs>
-        <rect width="1080" height="1080" fill="#FAF9F7"/>
-        <rect width="1080" height="1080" fill="url(#pt9d)"/>
-        <rect x="80" y="80" width="920" height="580" fill="#EDE8E2"/>
-        <text x="540" y="375" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#CCC" letter-spacing="3">KITCHEN PHOTOGRAPH</text>
-        <text x="80" y="790" font-family="DM Sans,sans-serif" font-size="11" fill="#C9A96E" letter-spacing="6">VENT'ANNI DI MESTIERE</text>
-        <text x="80" y="900" font-family="Cormorant Garamond,Georgia,serif" font-size="92" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-2">Le stesse</text>
-        <text x="80" y="992" font-family="Cormorant Garamond,Georgia,serif" font-size="92" fill="#1A1A1A" font-weight="700" font-style="italic" letter-spacing="-2">mani.</text>
-        <line x1="80" y1="1020" x2="500" y2="1020" stroke="#C9A96E" stroke-width="1.5"/>
-        <text x="80" y="1058" font-family="DM Sans,sans-serif" font-size="11" fill="#999" letter-spacing="3">DE LUCA · CAMBRIDGE</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Le Stesse Mani</div>
-        <div class="tcard-meta">Feed · Ivory · Craft 20 years</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt9','Le Stesse Mani')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt9','dlc_feed_20y_mani')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- T10 -->
-    <div class="tcard">
-      <svg id="pt10" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1080" fill="#1A1A1A"/>
-        <rect x="80" y="80" width="920" height="580" fill="#111"/>
-        <text x="540" y="375" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#222" letter-spacing="4">PIANO BAR PHOTOGRAPH</text>
-        <text x="80" y="788" font-family="Cormorant Garamond,Georgia,serif" font-size="120" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-3">Piano</text>
-        <text x="80" y="900" font-family="Cormorant Garamond,Georgia,serif" font-size="120" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-3">Bar.</text>
-        <text x="80" y="960" font-family="DM Sans,sans-serif" font-size="14" fill="#444" letter-spacing="4">EVERY FRIDAY &amp; SATURDAY</text>
-        <text x="80" y="1004" font-family="DM Sans,sans-serif" font-size="12" fill="#6E0B1C" letter-spacing="2">FROM 20:00 ↗</text>
-        <text x="1000" y="1055" text-anchor="end" font-family="DM Sans,sans-serif" font-size="12" fill="#333" letter-spacing="3">DE LUCA</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Piano Bar</div>
-        <div class="tcard-meta">Feed · Dark · Friday nights</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('pt10','Piano Bar')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('pt10','dlc_feed_piano_bar')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-eyebrow" style="margin-bottom:.75rem">Stories - 1080 × 1920</div>
-  <div class="tgrid">
-
-    <!-- S1 -->
-    <div class="tcard">
-      <svg id="ps1" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="ps1d" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.2" fill="#FAF9F7" opacity="0.08"/></pattern></defs>
-        <rect width="1080" height="1920" fill="#6E0B1C"/>
-        <rect width="1080" height="1920" fill="url(#ps1d)"/>
-        <rect x="0" y="0" width="1080" height="180" fill="rgba(0,0,0,0.2)"/>
-        <line x1="60" y1="180" x2="1020" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
-        <text x="540" y="88" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="120" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="rgba(0,0,0,0.3)"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.2)" letter-spacing="3">PHOTOGRAPH</text>
-        <text x="80" y="1240" font-family="Cormorant Garamond,Georgia,serif" font-size="160" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-5">Fatto</text>
-        <text x="80" y="1402" font-family="Cormorant Garamond,Georgia,serif" font-size="160" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-5">a mano.</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(0,0,0,0.2)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Fatto a Mano</div>
-        <div class="tcard-meta">Story · Crimson · General brand</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps1','Fatto a Mano - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps1','dlc_story_fatto_a_mano')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S2 -->
-    <div class="tcard">
-      <svg id="ps2" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#FAF9F7"/>
-        <rect x="40" y="40" width="1000" height="1840" fill="none" stroke="#6E0B1C" stroke-width="2"/>
-        <rect x="0" y="0" width="1080" height="180" fill="#6E0B1C"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="80" y="220" width="920" height="860" fill="#EDE8E2"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#CCC" letter-spacing="3">PHOTOGRAPH</text>
-        <text x="80" y="1230" font-family="Cormorant Garamond,Georgia,serif" font-size="150" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-4">Stasera.</text>
-        <line x1="80" y1="1276" x2="560" y2="1276" stroke="#6E0B1C" stroke-width="3"/>
-        <text x="80" y="1348" font-family="DM Sans,sans-serif" font-size="18" fill="#999" letter-spacing="5">OPEN FROM 18:00</text>
-        <rect x="0" y="1760" width="1080" height="160" fill="#6E0B1C"/>
-        <text x="80" y="1854" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)" letter-spacing="3">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Stasera</div>
-        <div class="tcard-meta">Story · Ivory · White border</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps2','Stasera - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps2','dlc_story_stasera')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S3 -->
-    <div class="tcard">
-      <svg id="ps3" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="5" fill="#6E0B1C"/>
-        <rect x="0" y="1915" width="1080" height="5" fill="#6E0B1C"/>
-        <rect x="0" y="0" width="1080" height="180" fill="rgba(110,11,28,0.5)"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#FAF9F7" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="#111"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#222" letter-spacing="3">FOOD PHOTOGRAPH</text>
-        <text x="80" y="1260" font-family="Cormorant Garamond,Georgia,serif" font-size="150" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-4">Il nuovo</text>
-        <text x="80" y="1414" font-family="Cormorant Garamond,Georgia,serif" font-size="150" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-4">menù.</text>
-        <text x="80" y="1490" font-family="DM Sans,sans-serif" font-size="16" fill="#555" letter-spacing="4">THE SEASON CHANGED.</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(110,11,28,0.3)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">New Menu</div>
-        <div class="tcard-meta">Story · Dark · Menu launch</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps3','New Menu - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps3','dlc_story_nuovo_menu')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S4 -->
-    <div class="tcard">
-      <svg id="ps4" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#FAF9F7"/>
-        <rect x="0" y="0" width="1080" height="180" fill="#6E0B1C"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <text x="80" y="440" font-family="DM Sans,sans-serif" font-size="11" fill="#C9A96E" letter-spacing="5">QUESTA SETTIMANA</text>
-        <line x1="80" y1="460" x2="1000" y2="460" stroke="#E5E2DD" stroke-width="1"/>
-        <text x="80" y="600" font-family="Cormorant Garamond,Georgia,serif" font-size="84" fill="#1A1A1A" font-weight="700" font-style="italic">Ribollita.</text>
-        <text x="80" y="648" font-family="DM Sans,sans-serif" font-size="14" fill="#999" letter-spacing="1">Tuscan bread soup</text>
-        <line x1="80" y1="680" x2="1000" y2="680" stroke="#E5E2DD" stroke-width="0.8"/>
-        <text x="80" y="820" font-family="Cormorant Garamond,Georgia,serif" font-size="84" fill="#1A1A1A" font-weight="700" font-style="italic">Branzino.</text>
-        <text x="80" y="868" font-family="DM Sans,sans-serif" font-size="14" fill="#999" letter-spacing="1">Sea bass, salsa verde</text>
-        <line x1="80" y1="900" x2="1000" y2="900" stroke="#E5E2DD" stroke-width="0.8"/>
-        <text x="80" y="1040" font-family="Cormorant Garamond,Georgia,serif" font-size="84" fill="#1A1A1A" font-weight="700" font-style="italic">Tiramisù.</text>
-        <text x="80" y="1088" font-family="DM Sans,sans-serif" font-size="14" fill="#999" letter-spacing="1">House made.</text>
-        <rect x="0" y="1760" width="1080" height="160" fill="#6E0B1C"/>
-        <text x="80" y="1854" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)" letter-spacing="3">PRENOTA UN TAVOLO · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Specials List</div>
-        <div class="tcard-meta">Story · Ivory · Three dishes</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps4','Specials - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps4','dlc_story_specials')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S5 -->
-    <div class="tcard">
-      <svg id="ps5" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="6" fill="#C9A96E"/>
-        <rect x="0" y="1914" width="1080" height="6" fill="#C9A96E"/>
-        <rect x="0" y="0" width="1080" height="180" fill="rgba(0,0,0,0.4)"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#C9A96E" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(201,169,110,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="#111"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#222" letter-spacing="3">RESTAURANT / ARCHIVE PHOTO</text>
-        <text x="80" y="1290" font-family="DM Sans,sans-serif" font-size="11" fill="#C9A96E" letter-spacing="6">2006 - 2026</text>
-        <line x1="80" y1="1312" x2="560" y2="1312" stroke="#C9A96E" stroke-width="1"/>
-        <text x="80" y="1456" font-family="Cormorant Garamond,Georgia,serif" font-size="176" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-6">Vent'</text>
-        <text x="80" y="1630" font-family="Cormorant Garamond,Georgia,serif" font-size="176" fill="#C9A96E" font-weight="700" font-style="italic" letter-spacing="-6">anni.</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(0,0,0,0.3)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#C9A96E" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(201,169,110,0.4)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Vent'anni - Story</div>
-        <div class="tcard-meta">Story · Dark gold · 20 years</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps5','Vent\'anni - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps5','dlc_story_20y_hero')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S6 -->
-    <div class="tcard">
-      <svg id="ps6" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#6E0B1C"/>
-        <rect x="0" y="0" width="1080" height="180" fill="rgba(0,0,0,0.25)"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="rgba(0,0,0,0.35)"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(0,0,0,0.2)" letter-spacing="3">ATMOSPHERE PHOTO</text>
-        <text x="80" y="1260" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" letter-spacing="5">CAMBRIDGE · 2006–2026</text>
-        <text x="80" y="1420" font-family="Cormorant Garamond,Georgia,serif" font-size="200" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-7">Gra-</text>
-        <text x="80" y="1618" font-family="Cormorant Garamond,Georgia,serif" font-size="200" fill="#fff" font-weight="700" font-style="italic" letter-spacing="-7">zie.</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(0,0,0,0.2)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Grazie - Story</div>
-        <div class="tcard-meta">Story · Crimson · Thank you</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps6','Grazie - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps6','dlc_story_20y_grazie')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S7 -->
-    <div class="tcard">
-      <svg id="ps7" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#FAF9F7"/>
-        <rect x="0" y="0" width="6" height="1920" fill="#6E0B1C"/>
-        <rect x="0" y="0" width="1080" height="180" fill="#1A1A1A"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#FAF9F7" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="#EDE8E2"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#CCC" letter-spacing="3">DISH PHOTOGRAPH</text>
-        <text x="80" y="1230" font-family="DM Sans,sans-serif" font-size="12" fill="#C9A96E" letter-spacing="5">IL DOLCE</text>
-        <text x="80" y="1390" font-family="Cormorant Garamond,Georgia,serif" font-size="148" fill="#1A1A1A" font-weight="700" font-style="italic" letter-spacing="-4">Tiramisù.</text>
-        <text x="80" y="1478" font-family="DM Sans,sans-serif" font-size="16" fill="#999" letter-spacing="4">THE MEAL ISN'T OVER</text>
-        <rect x="0" y="1760" width="1080" height="160" fill="#6E0B1C"/>
-        <text x="80" y="1854" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)" letter-spacing="3">PRENOTA UN TAVOLO · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Tiramisù</div>
-        <div class="tcard-meta">Story · Ivory · Dish feature</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps7','Tiramisù - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps7','dlc_story_tiramisu')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S8 -->
-    <div class="tcard">
-      <svg id="ps8" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="180" fill="#6E0B1C"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="60" y="220" width="960" height="860" fill="#111"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#222" letter-spacing="3">PIANO BAR PHOTOGRAPH</text>
-        <text x="80" y="1270" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-3">Piano</text>
-        <text x="80" y="1400" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-3">Bar.</text>
-        <text x="80" y="1478" font-family="DM Sans,sans-serif" font-size="16" fill="#444" letter-spacing="4">EVERY FRI &amp; SAT · FROM 20:00</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(110,11,28,0.3)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Piano Bar</div>
-        <div class="tcard-meta">Story · Dark · Friday nights</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps8','Piano Bar - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps8','dlc_story_piano_bar')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S9 -->
-    <div class="tcard">
-      <svg id="ps9" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#FAF9F7"/>
-        <rect x="40" y="40" width="1000" height="1840" fill="none" stroke="#6E0B1C" stroke-width="2"/>
-        <rect x="0" y="0" width="1080" height="180" fill="#6E0B1C"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#fff" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="4">CAMBRIDGE</text>
-        <rect x="80" y="220" width="920" height="860" fill="#EDE8E2"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#CCC" letter-spacing="3">GRADUATION / EVENT PHOTO</text>
-        <text x="80" y="1400" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#6E0B1C" font-weight="700" font-style="italic" letter-spacing="-3">Festeg-</text>
-        <text x="80" y="1530" font-family="Cormorant Garamond,Georgia,serif" font-size="130" fill="#1A1A1A" font-weight="700" font-style="italic" letter-spacing="-3">giamo.</text>
-        <text x="80" y="1618" font-family="DM Sans,sans-serif" font-size="16" fill="#AAA" letter-spacing="4">BOOK YOUR CELEBRATION</text>
-        <rect x="0" y="1760" width="1080" height="160" fill="#6E0B1C"/>
-        <text x="80" y="1854" font-family="DM Sans,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)" letter-spacing="3">PRENOTA UN TAVOLO · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Festeggiamo</div>
-        <div class="tcard-meta">Story · Ivory · Graduation/events</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps9','Festeggiamo - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps9','dlc_story_festeggiamo')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- S10 -->
-    <div class="tcard">
-      <svg id="ps10" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1080" height="1920" fill="#1A1A1A"/>
-        <rect x="0" y="0" width="1080" height="5" fill="#C9A96E"/>
-        <rect x="0" y="1915" width="1080" height="5" fill="#C9A96E"/>
-        <rect x="0" y="0" width="1080" height="180" fill="rgba(0,0,0,0.4)"/>
-        <text x="540" y="90" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="38" fill="#C9A96E" font-weight="600" font-style="italic" letter-spacing="6">De Luca</text>
-        <text x="540" y="124" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(201,169,110,0.5)" letter-spacing="4">CAMBRIDGE · 2006–2026</text>
-        <rect x="60" y="220" width="960" height="860" fill="#111"/>
-        <text x="540" y="655" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#1E1E1E" letter-spacing="3">KITCHEN / CRAFT PHOTOGRAPH</text>
-        <text x="80" y="1280" font-family="DM Sans,sans-serif" font-size="11" fill="#C9A96E" letter-spacing="6">VENT'ANNI DI MESTIERE</text>
-        <text x="80" y="1450" font-family="Cormorant Garamond,Georgia,serif" font-size="150" fill="#FAF9F7" font-weight="700" font-style="italic" letter-spacing="-5">Le stesse</text>
-        <text x="80" y="1598" font-family="Cormorant Garamond,Georgia,serif" font-size="150" fill="#C9A96E" font-weight="700" font-style="italic" letter-spacing="-5">mani.</text>
-        <rect x="0" y="1720" width="1080" height="200" fill="rgba(0,0,0,0.3)"/>
-        <text x="540" y="1800" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#C9A96E" letter-spacing="3">PRENOTA UN TAVOLO</text>
-        <text x="540" y="1832" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(201,169,110,0.4)" letter-spacing="2">BOOK YOUR TABLE · LINK IN BIO</text>
-      </svg>
-      <div class="tcard-body">
-        <div class="tcard-name">Le Stesse Mani</div>
-        <div class="tcard-meta">Story · Dark gold · 20 years craft</div>
-        <div class="dl-row">
-          <button class="prev-btn" onclick="showOv('ps10','Le Stesse Mani - Story')">Preview</button>
-          <button class="dl-btn" onclick="dlSVG('ps10','dlc_story_20y_mani')">↓ SVG</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div style="text-align:center;padding:1.5rem;background:var(--wh);border:1px solid var(--bo);margin-top:1rem">
-    <p style="font-size:13px;color:var(--mu);margin-bottom:12px">Download all 20 templates. Open in Canva → Upload SVG → use as background → add your photo on top.</p>
-    <button style="background:var(--cr);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:2px;padding:12px 28px;cursor:pointer;text-transform:uppercase" onclick="dlAll()">↓ Download All 20 SVGs</button>
-  </div>
-</div>
-
-
-<!-- CAPTIONS -->
-<div id="captions" class="section">
-  <div class="section-eyebrow">Captions</div>
-  <div class="section-title">Ready to post.</div>
-  <div class="section-sub">Copy any caption directly. Written to match De Luca's voice - warm, Italian-inflected, concise.</div>
-
-  <div style="display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap">
-    <button style="background:var(--cr);color:#fff;border:none;padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase" onclick="fc('all')">All</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('mood')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">Mood</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('offer')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">Offers</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('feed')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">Feed</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('piano')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">Piano Bar</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('anni')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">20 Years</button>
-    <button style="background:none;border:1px solid var(--bo);color:var(--mu);padding:7px 16px;font-size:11px;letter-spacing:1.5px;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:all .15s" onclick="fc('menu')" onmouseover="this.style.borderColor='#6E0B1C';this.style.color='#6E0B1C'" onmouseout="this.style.borderColor='var(--bo)';this.style.color='var(--mu)'">New Menu</button>
-  </div>
-  <div class="cap-grid" id="capBank"></div>
-</div>
-
-
-<!-- BRAND -->
-<div id="brand" class="section">
-  <div class="section-eyebrow">Brand</div>
-  <div class="section-title">Colours, type<br>&amp; voice.</div>
-  <div class="section-sub">The 2026 brand guide. Use these colours, fonts and rules for every post.</div>
-
-  <div class="brand-board">
-    <div class="brand-card">
-      <h3>Colour palette</h3>
-      <div class="swatch-row">
-        <div><div class="swatch" style="background:#6E0B1C"></div><div class="sw-hex">#6E0B1C</div><div class="sw-label">Crimson - primary</div></div>
-        <div><div class="swatch" style="background:#C0C0C0"></div><div class="sw-hex">#C0C0C0</div><div class="sw-label">Silver - logo bg</div></div>
-        <div><div class="swatch" style="background:#FAF9F7;border:1px solid #ddd"></div><div class="sw-hex">#FAF9F7</div><div class="sw-label">Off-white - bg</div></div>
-        <div><div class="swatch" style="background:#1A1A1A"></div><div class="sw-hex">#1A1A1A</div><div class="sw-label">Near black</div></div>
-        <div><div class="swatch" style="background:#C9A96E"></div><div class="sw-hex">#C9A96E</div><div class="sw-label">Gold - 20 Years</div></div>
-      </div>
-    </div>
-
-    <div class="brand-card">
-      <h3>Typography</h3>
-      <div class="font-demo">The view? Bellissimo.</div>
-      <div class="font-meta" style="margin-bottom:1rem"><strong>Cormorant Garamond Italic</strong> - all display text, captions, headlines. Always large. Never light weight at small sizes.</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;letter-spacing:.06em;color:var(--tx);margin-bottom:4px">De Luca · cucina &amp; bar</div>
-      <div class="font-meta"><strong>DM Sans Light</strong> - logo text, labels, addresses. Spaced out (letter-spacing 0.05em).</div>
-    </div>
-
-    <div class="brand-card">
-      <h3>Voice - do</h3>
-      <ul class="do-list">
-        <li>Italian phrases: Bellissimo, Stasera, Prenota, Fatto a mano</li>
-        <li>Rhetorical questions: "Fancy a bite?"</li>
-        <li>Short lines - let the photo lead</li>
-        <li>Warm and direct, like a charming host</li>
-        <li>Reference Cambridge specifically</li>
-        <li>Celebrate occasions: graduation, date night</li>
-      </ul>
-    </div>
-
-    <div class="brand-card">
-      <h3>Voice - don't</h3>
-      <ul class="do-list dont-list">
-        <li>Banned words: authentic, passion, love, amore, amazing, delicious, journey, nestled</li>
-        <li>Emoji overload or exclamation marks</li>
-        <li>Generic hashtags (#foodie #yummy #instagood)</li>
-        <li>Corporate or formal tone</li>
-        <li>Captions over 200 characters for feed posts</li>
-        <li>Crimson as "wine red" - it's contemporary, not traditional</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section-eyebrow" style="margin-top:2.5rem;margin-bottom:.75rem">Hashtag sets</div>
-  <div class="hash-grid">
-    <div class="hash-card"><h4>Standard</h4><div class="hash-tags">#DeLucaCambridge #CambridgeEats<br>#CambridgeRestaurant #ItalianRestaurant<br>#CambridgeFoodie</div></div>
-    <div class="hash-card"><h4>Terrace &amp; summer</h4><div class="hash-tags">#CambridgeTerrace #RooftopDining<br>#AlFresco #SummerDining<br>#CambridgeSummer</div></div>
-    <div class="hash-card"><h4>Piano Bar</h4><div class="hash-tags">#PianoBar #CambridgeNightOut<br>#CambridgeBar #LiveMusic<br>#CambridgeCocktails</div></div>
-    <div class="hash-card"><h4>Graduation season</h4><div class="hash-tags">#CambridgeGraduation #CambridgeGrad<br>#Graduation2026 #CelebrateCambridge</div></div>
-  </div>
-</div>
-
-
-<!-- STRATEGY -->
-<div id="strategy" class="section">
-  <div class="section-eyebrow">Strategy</div>
-  <div class="section-title">When to post.<br>What to post.</div>
-  <div class="section-sub">A simple weekly rhythm - two stories and one feed post. Batched on Sunday in 30 minutes, scheduled to go out at the right times.</div>
-
-  <div class="section-eyebrow" style="margin-bottom:.75rem">Weekly posting schedule</div>
-  <div class="sched-grid">
-    <div class="sched-card">
-      <div class="sched-day">Monday</div>
-      <div class="sched-time">9–11am</div>
-      <div class="sched-desc">Story 1 - mood / atmosphere. One beautiful image. No CTA. Let the photo do the work.</div>
-    </div>
-    <div class="sched-card">
-      <div class="sched-day">Wednesday</div>
-      <div class="sched-time">9–11am</div>
-      <div class="sched-desc">Story 2 - offer or event. Booking prompt, Piano Bar reminder, seasonal special. Always add a link sticker.</div>
-    </div>
-    <div class="sched-card">
-      <div class="sched-day">Friday</div>
-      <div class="sched-time">5–7pm</div>
-      <div class="sched-desc">Feed post - hero content. Best image of the week. 150–200 char caption. 4–5 hashtags.</div>
-    </div>
-  </div>
-
-  <div class="section-eyebrow" style="margin-bottom:.75rem">Monthly content themes</div>
-  <div class="theme-grid">
-    <div class="theme-card"><div class="theme-num">01</div><h4>Week 1 - Food Hero</h4><p>Gnocchi, linguine frutti di mare, beef lasagne, handmade pasta, gelato. Open kitchen shots.</p></div>
-    <div class="theme-card"><div class="theme-num">02</div><h4>Week 2 - Terrace Life</h4><p>Rooftop views, al fresco dining, Cambridge skyline. Groups celebrating, couples, summer.</p></div>
-    <div class="theme-card"><div class="theme-num">03</div><h4>Week 3 - Piano Bar</h4><p>Friday/Saturday nights, cocktails, candlelight, live piano, sing-alongs. Moody atmospheric shots.</p></div>
-    <div class="theme-card"><div class="theme-num">04</div><h4>Week 4 - Occasion / BTS</h4><p>Graduations, birthdays, private dining, chef behind the scenes, local sourcing stories.</p></div>
-  </div>
-
-  <div class="section-eyebrow" style="margin-top:2rem;margin-bottom:.75rem">How to use a template</div>
-  <div class="brand-board">
-    <div class="brand-card" style="grid-column:1/-1">
-      <h3>Three steps</h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:.5rem">
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;color:var(--cr);line-height:1">1.</div>
-          <div style="font-size:14px;font-weight:500;margin-bottom:6px">Download the SVG</div>
-          <div style="font-size:12px;color:var(--mu);line-height:1.6">Click ↓ SVG on any template. The file saves to your downloads folder.</div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;color:var(--cr);line-height:1">2.</div>
-          <div style="font-size:14px;font-weight:500;margin-bottom:6px">Open in Canva</div>
-          <div style="font-size:12px;color:var(--mu);line-height:1.6">In Canva, create a new design at the right size. Uploads → Upload files → select the SVG. Drag it onto the canvas as a background layer.</div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;color:var(--cr);line-height:1">3.</div>
-          <div style="font-size:14px;font-weight:500;margin-bottom:6px">Add your photo &amp; post</div>
-          <div style="font-size:12px;color:var(--mu);line-height:1.6">Drop your photo into the grey placeholder zone. Copy a caption from the Captions tab. Export and post.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</main>
-
-<footer>
-  <strong>De Luca</strong>
-  Cucina &amp; Bar · Cambridge · delucacucina.co.uk
-</footer>
-
-<!-- OVERLAY -->
-<div class="ov" id="ov" onclick="closeOv(event)">
-  <button class="ov-x" onclick="closeOv()">✕ CLOSE</button>
-  <div id="ov-svg"></div>
-  <div class="ov-lbl" id="ov-lbl"></div>
-</div>
-
-<script>
-const caps = [
-  {t:'mood',l:'Story - Mood',c:'The view? Bellissimo.',h:''},
-  {t:'mood',l:'Story - Mood',c:'Some evenings just call for this.',h:''},
-  {t:'mood',l:'Story - Mood',c:'Handmade. Every single time.',h:''},
-  {t:'mood',l:'Story - Mood',c:'Al fresco e bellissimo.',h:''},
-  {t:'mood',l:'Story - Mood',c:"It's the perfect weather for dinner on the terrace.",h:''},
-  {t:'offer',l:'Story - Offer',c:'Dinner with a view this evening? We have tables. Book via the link below.',h:''},
-  {t:'offer',l:'Story - Offer',c:'Piano Bar is back this Friday. Cocktails, requests, sing-alongs. From 8pm. Book your table now.',h:''},
-  {t:'offer',l:'Story - Offer',c:"Graduating this summer? Celebrate with us - complimentary Prosecco when you dine. Link to book below.",h:''},
-  {t:'offer',l:'Story - Offer',c:'Private dining for groups. The Vespa Room is yours. Get in touch.',h:''},
-  {t:'offer',l:'Story - Offer',c:'Last few tables left this Saturday. Book before they go.',h:''},
-  {t:'feed',l:'Feed Post',c:"Cambridge's best view comes with gnocchi. Join us on the rooftop terrace this week.",h:'#DeLucaCambridge #CambridgeEats #CambridgeTerrace #ItalianRestaurant'},
-  {t:'feed',l:'Feed Post',c:'Handmade pasta. Locally-sourced ingredients. A view of Cambridge.',h:'#DeLucaCambridge #CambridgeFoodie #ItalianRestaurant #CambridgeEats'},
-  {t:'feed',l:'Feed Post',c:"Fancy a bite? Our linguine frutti di mare is back.",h:'#DeLucaCambridge #CambridgeEats #PastaLover #ItalianFood'},
-  {t:'piano',l:'Piano Bar',c:"Cambridge's favourite Friday night. Cocktails, requests, sing-alongs. See you at the Piano Bar - 8pm.",h:'#PianoBar #CambridgeNightOut #CambridgeBar #DeLucaCambridge'},
-  {t:'piano',l:'Piano Bar',c:'Every Friday & Saturday. The Piano Bar at De Luca. Come for the cocktails, stay for the requests.',h:'#PianoBar #CambridgeCocktails #CambridgeNightOut #LiveMusic'},
-  {t:'terrace',l:'Terrace',c:"The rooftop. The view. The food. It doesn't get better than this in Cambridge.",h:'#CambridgeTerrace #RooftopDining #DeLucaCambridge #AlFresco'},
-  {t:'terrace',l:'Terrace',c:'Dinner with a view. The De Luca terrace is open. Book your table.',h:'#CambridgeTerrace #AlFresco #SummerDining #DeLucaCambridge'},
-  {t:'anni',l:'20 Years',c:"Twenty years in. And the best is still to come. Come celebrate with us - the Prosecco is cold and the pasta is fresh. A tavola!",h:'#DeLucaCambridge #20Years #CambridgeRestaurant'},
-  {t:'anni',l:'20 Years',c:'"Da venti anni, il cuore d\'Italia a Cambridge." For twenty years, the heart of Italy in Cambridge.',h:'#DeLucaCambridge #20Years #Cambridge #ItalianRestaurant'},
-  {t:'anni',l:'20 Years',c:'2006–2026. Twenty years of handmade pasta, rooftop views and Cambridge memories. Grazie.',h:'#DeLucaCambridge #20Years #CambridgeFoodie'},
-  {t:'menu',l:'New Menu',c:'The new summer menu is here. The season changed - and so did we.',h:'#DeLucaCambridge #NewMenu #SummerMenu #CambridgeEats'},
-  {t:'menu',l:'New Menu',c:'Fatto a mano, ogni giorno. The new menu is now available - book a table to try it.',h:'#DeLucaCambridge #NewMenu #ItalianFood #CambridgeRestaurant'},
-  {t:'menu',l:'New Menu',c:'New dishes. Same kitchen. Same hands.',h:'#DeLucaCambridge #SummerMenu #CambridgeFoodie #ItalianRestaurant'},
-];
-
-function renderCaps(filter) {
-  const bank = document.getElementById('capBank');
-  const list = filter === 'all' ? caps : caps.filter(c => c.t === filter);
-  bank.innerHTML = list.map(c => `
-    <div class="cap-card">
-      <div class="cap-type">${c.l}</div>
-      <div class="cap-text">${c.c}</div>
-      ${c.h ? `<div class="cap-hash">${c.h}</div>` : ''}
-      <button class="copy-btn" onclick="cp(this,'${c.c.replace(/'/g,"\\'")}${c.h?' '+c.h:''}')">Copy</button>
-    </div>`).join('');
-}
-
-function fc(type) { renderCaps(type); }
-
-function cp(btn, text) {
-  navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.textContent;
-    btn.textContent = 'Copied!'; btn.style.background = '#6E0B1C'; btn.style.color = '#fff'; btn.style.borderColor = '#6E0B1C';
-    setTimeout(() => { btn.textContent = orig; btn.style.background=''; btn.style.color=''; btn.style.borderColor=''; }, 2000);
-  });
-}
-
-function goTo(id) {
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`[onclick="goTo('${id}')"]`).classList.add('active');
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function showOv(id, label) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const clone = el.cloneNode(true);
-  document.getElementById('ov-svg').innerHTML = '';
-  document.getElementById('ov-svg').appendChild(clone);
-  document.getElementById('ov-lbl').textContent = label || '';
-  document.getElementById('ov').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeOv(e) {
-  if (e && e.target !== document.getElementById('ov') && !e.target.classList.contains('ov-x')) return;
-  document.getElementById('ov').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function dlSVG(id, filename) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const clone = el.cloneNode(true);
-  clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
-  const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + clone.outerHTML], {type:'image/svg+xml'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = filename + '.svg'; a.click();
-  URL.revokeObjectURL(url);
-}
-
-const allIds = ['pt1','pt2','pt3','pt4','pt5','pt6','pt7','pt8','pt9','pt10','ps1','ps2','ps3','ps4','ps5','ps6','ps7','ps8','ps9','ps10'];
-const allNames = ['dlc_feed_fatto_a_mano','dlc_feed_al_fresco','dlc_feed_stasera','dlc_feed_split_terrace','dlc_feed_nuovo_menu','dlc_feed_specials','dlc_feed_20y_hero','dlc_feed_20y_grazie','dlc_feed_20y_mani','dlc_feed_piano_bar','dlc_story_fatto_a_mano','dlc_story_stasera','dlc_story_nuovo_menu','dlc_story_specials','dlc_story_20y_hero','dlc_story_20y_grazie','dlc_story_tiramisu','dlc_story_piano_bar','dlc_story_festeggiamo','dlc_story_20y_mani'];
-
-function dlAll() {
-  allIds.forEach((id,i) => setTimeout(() => dlSVG(id, allNames[i]), i * 120));
-}
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { document.getElementById('ov').classList.remove('open'); document.body.style.overflow = ''; }
-});
-
-renderCaps('all');
-
-// Highlight active nav on scroll
-const sections = ['overview','templates','captions','brand','strategy'];
-window.addEventListener('scroll', () => {
-  let current = 'overview';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 100) current = id;
-  });
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  const btn = document.querySelector(`[onclick="goTo('${current}')"]`);
-  if (btn) btn.classList.add('active');
-});
-</script>
 </body>
 </html>

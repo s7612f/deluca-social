@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1920" height="540" viewBox="0 0 1920 540" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1920" height="540" fill="#C4622D"/>
-  <text x="960" y="280" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="160" fill="#F4EDE3" font-weight="600" letter-spacing="30">DE LUCA</text>
-  <line x1="700" y1="320" x2="1220" y2="320" stroke="#F4EDE3" stroke-width="0.8"/>
-  <text x="960" y="370" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="24" fill="#F4EDE3" letter-spacing="18">ITALIAN RESTAURANT</text>
-</svg>
